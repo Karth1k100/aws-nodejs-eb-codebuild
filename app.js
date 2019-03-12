@@ -1,8 +1,8 @@
 // Load the AWS SDK
 var AWS = require('aws-sdk')
 
-var express = require('express')
-var bodyParser = require('body-parser')
+var express = require('C:/Users/Luillo/AppData/Local/Microsoft/TypeScript/2.9/node_modules/@types/express')
+var bodyParser = require('C:/Users/Luillo/AppData/Local/Microsoft/TypeScript/2.9/node_modules/@types/body-parser')
 
 // Set region for AWS SDKs
 AWS.config.region = process.env.REGION
@@ -24,6 +24,8 @@ app.get('/test-endpoint', (req, res) => {
   res.json({content: 'hello Karthik'});
 });
 
+app.use('/movies', movieRouter);
+app.use('/users', userRouter);
 var port = process.env.PORT || 3000
 
 var server = app.listen(port, function () {
