@@ -2,8 +2,8 @@
 var AWS = require('aws-sdk')
 
 var express = require('express')
-var bodyParser = require('body-parser')
-var movieRouter = require('./routers/movie-router.js');
+//var bodyParser = require('body-parser')
+//var movieRouter = require('./routers/movie-router.js');
 //var userRouter = require('./routers/user-router.js');
 //import  movieRouter  from './routers/movie-router.js';
 //import  userRouter  from './routers/user-router.js';
@@ -28,7 +28,7 @@ app.get('/test-endpoint', (req, res) => {
   res.json({content: 'hello Karthik'});
 });
 
-app.use('/movies', movieRouter);
+//app.use('/movies', movieRouter);
 // app.use('/users', userRouter);
 var port = process.env.PORT || 3000
 
