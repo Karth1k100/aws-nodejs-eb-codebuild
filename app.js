@@ -1,8 +1,8 @@
 // Load the AWS SDK
 var AWS = require('aws-sdk')
 
-var express = require('C:/Users/Luillo/AppData/Local/Microsoft/TypeScript/2.9/node_modules/@types/express')
-var bodyParser = require('C:/Users/Luillo/AppData/Local/Microsoft/TypeScript/2.9/node_modules/@types/body-parser')
+var express = require('express')
+var bodyParser = require('body-parser')
 
 // Set region for AWS SDKs
 AWS.config.region = process.env.REGION
