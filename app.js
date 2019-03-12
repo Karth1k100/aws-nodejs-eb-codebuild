@@ -24,8 +24,8 @@ app.get('/test-endpoint', (req, res) => {
   res.json({content: 'hello Karthik'});
 });
 
-app.use('/movies', /routers/movieRouter);
-app.use('/users', /routers/userRouter);
+app.use('/movies', routers/movieRouter);
+app.use('/users', routers/userRouter);
 var port = process.env.PORT || 3000
 
 var server = app.listen(port, function () {
