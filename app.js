@@ -3,6 +3,8 @@ var AWS = require('aws-sdk')
 
 var express = require('express')
 var bodyParser = require('body-parser')
+import { movieRouter } from './routers/movie-router';
+import { userRouter } from './routers/user-router';
 
 // Set region for AWS SDKs
 AWS.config.region = process.env.REGION
