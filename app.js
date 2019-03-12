@@ -12,6 +12,7 @@ var app = express()
 app.set('view engine', 'pug')
 app.set('views', __dirname + '/views')
 app.use(bodyParser.urlencoded({extended:false}))
+ 
 
 app.get('/', function (req, res) {
   res.render('index', {
@@ -19,6 +20,9 @@ app.get('/', function (req, res) {
     })
     res.status(200).end();
 })
+app.get('/test-endpoint', (req, res) => {
+  res.json({content: 'hello Karthik'});
+});
 
 var port = process.env.PORT || 3000
 
