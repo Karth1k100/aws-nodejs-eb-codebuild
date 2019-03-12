@@ -1,6 +1,6 @@
 import aws from 'aws-sdk';
 import { ConfigurationOptions } from 'aws-sdk/lib/config';
-const awsConfig: ConfigurationOptions = {
+const awsConfig = {
   region: process.env.MOVIE_API_REGION,
   accessKeyId: process.env.AWS_ACCESS_KEY,
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
@@ -37,14 +37,14 @@ export function createMovieTable() {
   });
 }
 
-export function saveMovie(movie): Promise<any> {
+export function saveMovie(movie)  {
   return docClient.put({
     TableName: 'movies',
     Item: movie
   }).promise();
 }
 
-export function findAllByYear(year: number): Promise<any> {
+export function findAllByYear(year)  {
   return docClient.query({
     TableName: 'movies',
     KeyConditionExpression: '#yr = :yyyy',
@@ -59,7 +59,7 @@ export function findAllByYear(year: number): Promise<any> {
   }).promise();
 }
 
-export function findByYearAndTitle(year: number, title: string): Promise<any> {
+export function findByYearAndTitle(year , title) {
   console.log(`finding movie with title: ${title}
   and year: ${year}`);
   return docClient.get({
@@ -71,7 +71,7 @@ export function findByYearAndTitle(year: number, title: string): Promise<any> {
   }).promise();
 }
 
-export function update(movie): Promise<any> {
+export function update(movie){
   return docClient.update({
     TableName: 'movies',
     Key: {

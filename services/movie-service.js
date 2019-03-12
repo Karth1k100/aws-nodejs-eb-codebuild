@@ -1,10 +1,10 @@
 import * as movieDao from '../dao/movie-dao';
 
-export function findAllByYear(year: number) {
+export function findAllByYear(year) {
   return movieDao.findAllByYear(year);
 }
 
-export function findByYearAndTitle(year: number, title: string) {
+export function findByYearAndTitle(year, title) {
   return movieDao.findByYearAndTitle(year, title);
 }
 

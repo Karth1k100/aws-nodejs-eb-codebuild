@@ -1,6 +1,6 @@
 import express, { Response } from 'express';
 import * as movieService from '../services/movie-service';
-import { authMiddleware } from '../security/auth-middleware';
+ 
 
 export const movieRouter = express.Router();
 
@@ -16,8 +16,8 @@ movieRouter.get('/title/:title/year/:year', (req, resp) => {
 });
 
 movieRouter.get('/year/:year', [
-  authMiddleware('admin', 'employee'),
-  (req, resp: Response, next) => {
+  
+  (req, resp , next) => {
     movieService.findAllByYear(parseInt(req.params.year))
       .then(data => {
         resp.json(data.Items);
@@ -41,7 +41,7 @@ movieRouter.put('', (req, resp) => {
 });
 
 movieRouter.post('', [
-  authMiddleware('admin'),
+  
   (req, resp) => {
     console.log(req.body);
     movieService.save(req.body)
