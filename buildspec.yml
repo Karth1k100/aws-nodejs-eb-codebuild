@@ -30,6 +30,9 @@ artifacts:
     - package.json
     - views/*
     - static/**/*
+    - dao/*
+    - routers/*
+    - services/*
     - node_modules/async/**/*
     - node_modules/lodash/**/*
     - node_modules/pug/**/*
