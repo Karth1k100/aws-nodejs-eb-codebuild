@@ -9,6 +9,7 @@ function retreiveMovies() {
       return resp.json();
     })
     .then((movies) => {
+    
 
       // clear table
       const body = document.getElementById('movie-table-body');
@@ -25,6 +26,7 @@ function retreiveMovies() {
 }
 
 function addMovie(movie) {
+  console.log(movie)
   const body = document.getElementById('movie-table-body');
 
   const row = document.createElement('tr'); // create <tr>
