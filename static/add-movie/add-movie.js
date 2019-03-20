@@ -12,7 +12,7 @@ function addMovie() {
     headers: {
       'content-type': 'application/json'
     },
-    credentials: 'include',
+    
     method: 'POST'
   })
   .then(resp => {
