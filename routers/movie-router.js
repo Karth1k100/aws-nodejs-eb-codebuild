@@ -40,9 +40,7 @@ movieRouter.put('', (req, resp) => {
     });
 });
 
-movieRouter.post('', [
-  
-  (req, resp) => {
+movieRouter.post('',(req, resp) => {
     console.log(req.body);
     movieService.save(req.body)
     .then(data => {
@@ -52,6 +50,6 @@ movieRouter.post('', [
       console.log(err);
       resp.sendStatus(500);
     });
-}]);
+});
 
 module.exports=movieRouter;
