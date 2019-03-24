@@ -18,6 +18,7 @@ movieRouter.get('/title/:title/year/:year', (req, resp) => {
 movieRouter.get('/year/:year', [
   
   (req, resp , next) => {
+   console.log(req.params.year);
     movieService.findAllByYear(parseInt(req.params.year))
       .then(data => {
         resp.json(data.Items);
