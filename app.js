@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
   res.render('index', {
-    title: 'This is a test'
+    title: 'This is a test 1234'
     })
     res.status(200).end();
 })
