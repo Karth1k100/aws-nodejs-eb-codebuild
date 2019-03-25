@@ -61,7 +61,7 @@ pipeline {
                 script {
                     try {
                         // kill any running instances
-                        sh "fuser -k 3000/tcp"
+                        sh "fuser -k 3001/tcp"
                     } catch (all) {
                         // if it fails that should mean a server wasn't already running
                     }
