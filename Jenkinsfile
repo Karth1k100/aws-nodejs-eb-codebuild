@@ -5,6 +5,8 @@ pipeline {
         }
     }
     
+    tools {nodejs "node"}
+    
     environment {
         JENKINS_NODE_COOKIE = 'dontkill'
         AWS_ACCESS_KEY = "${AWS_ACCESS_KEY}"
