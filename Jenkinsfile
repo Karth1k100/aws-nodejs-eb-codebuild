@@ -28,28 +28,40 @@ pipeline {
        stage('Download') {
            steps {
               // Download code from a GitHub repository
-              git 'https://github.com/cloud-native-react-blake-may-2018/demos.git'
+              git 'https://github.com/luisgonzalez1/aws-nodejs-eb-codebuild.git'
            }
         }
 
         stage('NPM Install') {
             steps {
                 // go into client-side directory
-                dir('week3') {
-                    dir('movie-api') {
+                
                         // install node modules
+						sh 'echo Installing Mocha...'
+						sh 'npm install -g mocha'
+						sh '- echo Installing source NPM dependencies...'
                         sh 'npm install'
-                    }
-                }
+						sh 'npm install unit.js'
+                 
             }
         }
+		
+		stage('build') {
+            steps {
+                 sh 'echo Build started...'
+				 sh 'echo Compiling the Node.js code'
+				 sh 'mocha test.js'
+            }
+        }
+		
+		 
         
         stage('Destroy Old Server') {
             steps {
                 script {
                     try {
                         // kill any running instances
-                        sh "fuser -k 3000/tcp"
+                        sh "fuser -k 3001/tcp"
                     } catch (all) {
                         // if it fails that should mean a server wasn't already running
                     }
@@ -59,11 +71,11 @@ pipeline {
 
         stage('Deploy') {
             steps {
-            
-                        // Deploy the application
-                        sh 'nohup npm run deploy &'
-                        // sh 'npm run deploy'
-                  
+                
+                    // Deploy the application
+                    sh 'nohup npm run deploy &'
+                    // sh 'npm run deploy'
+                 
             }
         }
 
