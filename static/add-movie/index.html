@@ -49,10 +49,10 @@
     </div>
   </nav>
 
-  <form class="container" onsubmit="addMovie();">
+  <form class="container" onsubmit="event.preventDefault(); addMovie();">
     <div class="form-row">
       <div class="form-group col-md-4">
-        <label for="input-year">Year!!</label>
+        <label for="input-year">Year</label>
         <input type="number" class="form-control" id="input-year" placeholder="Year" required>
       </div>
       <div class="form-group col-md-4">
@@ -81,7 +81,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
     crossorigin="anonymous"></script>
 
-  <script src="add-movie.js"></script>
+  <script src="./add-movie.js"></script>
 </body>
 
 </html>
