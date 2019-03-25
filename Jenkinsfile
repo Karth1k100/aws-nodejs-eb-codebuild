@@ -39,7 +39,7 @@ pipeline {
                         // install node modules
 						sh 'echo Installing Mocha...'
 						sh 'npm install -g mocha'
-						sh '- echo Installing source NPM dependencies...'
+						sh 'echo Installing source NPM dependencies...'
                         sh 'npm install'
 						sh 'npm install unit.js'
                  
