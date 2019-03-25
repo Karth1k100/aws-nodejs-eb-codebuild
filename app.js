@@ -30,7 +30,7 @@ app.get('/test-endpoint', (req, res) => {
 
 app.use('/movies', movieRouter);
 //app.use('/users', userRouter);
-var port = process.env.PORT || 3000
+var port = process.env.PORT || 3001
 
 var server = app.listen(port, function () {
   console.log('Server running at http://127.0.0.1:' + port + '/')
