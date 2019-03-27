@@ -1,6 +1,6 @@
 function retreiveMovies() {
   const year = document.getElementById('year-input').value;
-  fetch('MyNodejsdeployment-env.en4n2qmpuv.us-west-2.elasticbeanstalk.com/movies/year/'+year)
+  fetch('http://MyNodejsdeployment-env.en4n2qmpuv.us-west-2.elasticbeanstalk.com/movies/year/'+year)
     .then(resp => {
       console.log(resp.status)
       if(resp.status === 401 || resp.status === 403) {
