@@ -7,7 +7,7 @@ function addMovie() {
   const movie = {year, title, rating, description};
   console.log(movie);
 
-  fetch('http://MyNodejsdeployment-env.en4n2qmpuv.us-west-2.elasticbeanstalk.com/movies',
+  fetch('http://mynodetestapp-env.bvcvfnzpbz.us-west-2.elasticbeanstalk.com/movies',
   {
     body: JSON.stringify(movie),
     headers: {
